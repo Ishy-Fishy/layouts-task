@@ -1,0 +1,47 @@
+@font-face {
+    font-family: openSans;
+    src: url(osans.ttf)
+}
+
+body {
+    background-color: white;
+    background-position: top;
+    background-image: url(task/addons/apples.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        
+    }
+    
+}
+#header {
+    color: white;
+    width: 100%;
+    height: 0;
+    padding-top: 66.64%;
+    text-align: left;
+    font-size: 14px;
+    position:relative;
+}
+
+.button{
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid;
+    border-radius: 2;
+    border-color: white;
+}
+
+#but1 {
+    margin-top: 250px;
+    margin-left:  45%;
+    position: absolute;
+    top: 300px;
+    font-size: 16px;
+    padding:20px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
