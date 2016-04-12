@@ -1,47 +1,70 @@
 @font-face {
-    font-family: openSans;
-    src: url(osans.ttf)
-}
+
+font-family: 'open_sansregular';
+    src: url('osans-webfont.eot');
+    src: url('osans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('osans-webfont.woff2') format('woff2'),
+         url('osans-webfont.woff') format('woff'),
+         url('osans-webfont.ttf') format('truetype'),
+         url('osans-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 body {
     background-color: white;
     background-position: top;
+    background-size: 100%;
     background-image: url(task/addons/apples.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
-}
-
-@media screen and (min-width: 480px) {
-    body {
-        
-    }
-    
-}
-#header {
-    color: white;
+    height: 100%;
     width: 100%;
-    height: 0;
-    padding-top: 66.64%;
-    text-align: left;
-    font-size: 14px;
-    position:relative;
+    font-size: 1em;
 }
 
-.button{
+.white-sans{
+    font-family: 'openSans';
     color: white;
+}
+.black-sans{
+  font-family: 'openSans';
+  color: black;
+}
+.button{
     background-color: rgba(0,0,0,0.3);
+    color: white;
     border: 2px solid;
     border-radius: 2;
     border-color: white;
+    transition-duration: 0.3s;
+    font-family: 'openSans';
+    box-sizing: border-box;
 }
 
-#but1 {
-    margin-top: 250px;
-    margin-left:  45%;
-    position: absolute;
-    top: 300px;
-    font-size: 16px;
-    padding:20px;
-    padding-left: 60px;
-    padding-right: 60px;
+.container2 .button{
+  position: absolute;
+  margin-top: 2em;
+  font-size: 1em;
+  padding:1.5em;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+.container2 .button:hover{
+  background-color: rgba(255,255,255,0.6);
+  color: black;
+}
+
+.centered{
+  margin-left: 40%;
+}
+
+.bigtext{
+  position: absolute;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 350%;
+}
+.bigtext span{
+  font-size: 200%;
 }
