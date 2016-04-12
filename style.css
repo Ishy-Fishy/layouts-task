@@ -11,7 +11,7 @@
 }
 body {
     background-color: white;
-    font-size: 1em;
+    font-size: 1.5vw;
 }
 .container1 {
     position: relative;
@@ -32,13 +32,12 @@ body {
 }
 .button {
     background-color: rgba(0, 0, 0, 0.3);
-    color: white;
     border: 2px solid;
     border-radius: 2;
     border-color: white;
     transition-duration: 0.3s;
-    font-family: 'openSans';
-    box-sizing: border-box;
+    font-size: 1em;
+    padding: 1.5em;
 }
 .container1 {
     margin-top: -5px;
@@ -57,28 +56,24 @@ body {
     display: inline-block;
     padding-left: 2em;
 }
-.container1 .button {
+
+.butcont .button {
+    display: inline-block;
     position: relative;
-    font-size: 1em;
-    padding: 1.5em;
     padding-left: 4em;
     padding-right: 4em;
+    margin-top: 5%;
 }
-.container1 .button:hover {
+.button:hover {
     background-color: rgba(255, 255, 255, 0.6);
     color: black;
 }
-a.centered {
-    margin-left: 40%;
-}
-p.centered {
+.centered {
     text-align: center;
 }
 .bigtext {
     position: relative;
-    ;
-    text-align: center;
-    margin-top: 3em;
+    margin-bottom: 5%;
     font-size: 350%;
 }
 .bigtext span {
@@ -95,6 +90,16 @@ p.centered {
     display: inline-block;
     width: 40%;
     height: 10em;
-    margin: 4em;
+    margin: 3%;
     text-align: center;
+}
+
+.container3 {
+  position: relative;
+  background-color: rgba(164, 164, 164, 0.5);
+}
+
+.featured {
+  padding-top: 4em;
+  padding-bottom: 4em;
 }
