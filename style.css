@@ -33,7 +33,6 @@ body {
 .button {
     background-color: rgba(0, 0, 0, 0.3);
     border: 2px solid;
-    border-radius: 2;
     border-color: white;
     transition-duration: 0.3s;
     font-size: 1em;
@@ -70,6 +69,7 @@ body {
 }
 .centered {
     text-align: center;
+    vertical-align: middle;
 }
 .bigtext {
     position: relative;
@@ -80,18 +80,17 @@ body {
     font-size: 200%;
 }
 .big {
-    font-size: 150%;
+    font-size: 130%;
 }
 .small {
-    font-size: 95%;
+    font-size: 90%;
 }
 .container2 .textbox {
-    box-sizing: border-box;
-    display: inline-block;
+    display: table-cell;
     width: 40%;
     height: 10em;
-    margin: 3%;
-    text-align: center;
+    padding: 5em;
+    vertical-align: middle;
 }
 
 .container3 {
@@ -102,4 +101,42 @@ body {
 .featured {
   padding-top: 4em;
   padding-bottom: 4em;
+}
+.highlight_line{
+  text-align: center;
+}
+
+.newsbox {
+  display: inline-block;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-color: white;
+  transition-duration: 0.3s;
+  height: 15em;
+  margin: 2em;
+}
+.aligntext{
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+.widebox{
+  width: 35em;
+}
+.narrowbox{
+  width: 20em;
+}
+
+#nb1{
+  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample.jpg');
+}
+#nb2{
+  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample2.jpg');
+}
+#nb3{
+  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample3.jpg');
+}
+#nb4{
+  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample4.jpg');
 }
