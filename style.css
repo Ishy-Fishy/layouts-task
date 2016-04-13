@@ -1,11 +1,7 @@
 @font-face {
     font-family: 'open_sansregular';
     src: url('osans-webfont.eot');
-    src: url('osans-webfont.eot?#iefix') format('embedded-opentype'),
-    url('osans-webfont.woff2') format('woff2'),
-    url('osans-webfont.woff') format('woff'),
-    url('osans-webfont.ttf') format('truetype'),
-    url('osans-webfont.svg#open_sansregular') format('svg');
+    src: url('osans-webfont.eot?#iefix') format('embedded-opentype'), url('osans-webfont.woff2') format('woff2'), url('osans-webfont.woff') format('woff'), url('osans-webfont.ttf') format('truetype'), url('osans-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -30,40 +26,53 @@ body {
     font-family: 'open_sansregular';
     color: black;
 }
-.button {
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 2px solid;
-    border-color: white;
-    transition-duration: 0.3s;
-    font-size: 1em;
-    padding: 1.5em;
+.grey-sans {
+    font-family: 'open_sansregular';
+    color: rgb(150, 150, 150);
 }
 .container1 {
     margin-top: -5px;
     margin-left: -5px;
 }
-.footer {
-  position: relative;
+.header, .footer {
+    position: relative;
 }
-.footer p{
-  display: inline-block;
-  margin-left: 1em;
-  margin-right: 50%
-}
-.footer a{
-    box-sizing: border-box;
+.header p, .footer p {
     display: inline-block;
-    padding-left: 2em;
+    margin-left: 1em;
+    margin-right: 45%
 }
-
+.header a, .footer a {
+    display: inline-block;
+}
+.air-button {
+    padding: 0.4em;
+    margin-left: 2em;
+    transition-duration: 0.3s;
+}
+.air-button:hover {
+    border-bottom: 0.1em solid;
+    border-color: rgb(133, 155, 195);
+}
+#active {
+    transition-duration: 0;
+    border-bottom: 0.1em solid;
+    border-color: rgb(133, 155, 195);
+}
 .butcont .button {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 0.1em solid;
+    border-color: white;
+    transition-duration: 0.3s;
+    font-size: 1em;
+    padding: 1.5em;
     display: inline-block;
     position: relative;
     padding-left: 4em;
     padding-right: 4em;
     margin-top: 5%;
 }
-.button:hover {
+.butcont .button:hover {
     background-color: rgba(255, 255, 255, 0.6);
     color: black;
 }
@@ -87,56 +96,133 @@ body {
 }
 .container2 .textbox {
     display: table-cell;
-    width: 40%;
-    height: 10em;
     padding: 5em;
     vertical-align: middle;
 }
-
 .container3 {
-  position: relative;
-  background-color: rgba(164, 164, 164, 0.5);
+    position: relative;
+    background-color: rgb(210, 210, 210);
 }
-
 .featured {
-  padding-top: 4em;
-  padding-bottom: 4em;
+    padding-top: 4em;
+    padding-bottom: 4em;
 }
-.highlight_line{
-  text-align: center;
+.highlight_line {
+    text-align: center;
+    margin-left: 3em;
+    margin-right: 3em;
 }
-
 .newsbox {
-  display: inline-block;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-color: white;
-  transition-duration: 0.3s;
-  height: 15em;
-  margin: 2em;
+    display: inline-block;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-width: 0.1em;
+    border-color: white;
+    border-style: solid;
+    height: 15em;
+    margin: 1em;
 }
-.aligntext{
-  position: absolute;
-  bottom: 1em;
-  left: 1em;
+.newsbox:hover {
+    border-color: rgba(150, 150, 150, 0.5);
 }
-.widebox{
-  width: 35em;
+.newsbox:hover .aligntext{
+  visibility: hidden;
 }
-.narrowbox{
-  width: 20em;
+.aligntext {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+.widebox {
+    width: 35em;
+}
+.narrowbox {
+    width: 20em;
+}
+#nb1 {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0.7) 100%), url('task/addons/sample.jpg');
+}
+#nb1:hover {
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7)0% , rgba(0,0,0,0.7) 100%), url('task/addons/sample.jpg');
+}
+#nb2 {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0.7) 100%), url('task/addons/sample2.jpg');
+}
+#nb2:hover {
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7)0% , rgba(0,0,0,0.7) 100%), url('task/addons/sample2.jpg');
+}
+#nb3 {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0.7) 100%), url('task/addons/sample3.jpg');
+}
+#nb3:hover {
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7)0% , rgba(0,0,0,0.7) 100%), url('task/addons/sample3.jpg');
+}
+#nb4 {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0.7) 100%), url('task/addons/sample4.jpg');
+}
+#nb4:hover {
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7)0% , rgba(0,0,0,0.7) 100%), url('task/addons/sample4.jpg');
+}
+.subscribe {
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    width: 96%;
+    background-color: white;
+    padding: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+    margin: 1em 1em 3em;
+}
+.emailthing {
+    height: 3.5em;
+    padding: 0.7em;
+    background-color: rgb(210, 210, 210);
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgb(55, 55, 55);
+}
+.emailthing[type=submit] {
+    background-color: rgb(55, 55, 55);
+    margin: -0.3em;
+}
+.subscribe .emailthing[type=text] {
+    margin-left: 2em;
+    min-width: 30em
+}
+.container4 .textbox {
+    display: table-cell;
+    padding: 1em;
+    text-align: left;
+}
+.footer {
+    border-width: 0;
+    border-top: 0.2em;
+    border-style: solid;
+    border-color: rgb(190, 190, 190);
+    margin: 1em 5em 0 5em;
+}
+.footer > p {
+    margin-right: 38%;
 }
 
-#nb1{
-  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample.jpg');
+#spambox{
+  display: inline-block;
+  width: 14em;
 }
-#nb2{
-  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample2.jpg');
+
+#spambox .emailthing{
+  height: 2em;
+  padding: 0;
+  font-size: 80%;
 }
-#nb3{
-  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample3.jpg');
+
+#spambox .emailthing[type=text]{
+  margin-left: 0;
+  width: 8em;
 }
-#nb4{
-  background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 75%, rgba(0, 0, 0, 0.5) 85%, rgba(0,0,0,0.7) 100%), url('task/addons/sample4.jpg');
+
+#spambox .emailthing[type=submit]{
+  margin-left: -0.5em;
 }
