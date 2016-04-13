@@ -94,6 +94,9 @@ body {
 .small {
     font-size: 90%;
 }
+.italic{
+  font-style: italic;
+}
 .container2 .textbox {
     display: table-cell;
     padding: 5em;
@@ -220,6 +223,7 @@ body {
 
 #spambox .emailthing[type=text]{
   margin-left: 0;
+  padding-left: 0.3em;
   width: 8em;
 }
 
