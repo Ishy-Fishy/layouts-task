@@ -82,11 +82,19 @@ body {
 }
 .bigtext {
     position: relative;
-    margin-bottom: 5%;
     font-size: 350%;
+    margin-bottom: 0;
+}
+.bigtext sup{
+  font-size: 50%;
+  vertical-align:super;
 }
 .bigtext span {
     font-size: 200%;
+}
+.container1 .small{
+  margin-top: 0;
+  margin-bottom: 5%;
 }
 .big {
     font-size: 130%;
