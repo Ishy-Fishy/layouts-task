@@ -2,6 +2,8 @@ var gulp = require('gulp');    //gulp should be installed globally and locally i
 var gconcat = require('gulp-concat'); // gulp concat for joining files
 var cssmin = require('gulp-cssmin'); //css minificator
 var htmlmin = require('gulp-htmlmin'); //html minificator
+var mainBowerFiles = require('main-bower-files'); //read 'main' properties in bower files and create pathes
+var uglify = require('gulp-uglify'); // minification of javascript
 var filter = require('gulp-filter'); // filter files according to some pattern
 var sass = require('gulp-sass'); //sass compiler
 var fontmin = require('gulp-fontmin');//font minificator
@@ -24,15 +26,27 @@ gulp.task('fonts', function () {
 gulp.task('sass', function () {
     return gulp.src(pth.src + '/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(pth.src + '/css'))
+        .pipe(gulp.dest(pth.src + '/tempcss'))
         .pipe(browserSync.stream());
 });
 
+gulp.task('scripts', function(){
+    return gulp.src(mainBowerFiles().concat([pth.src + '/js/*.js']))
+        .pipe(filter('**/*.js'))
+        .pipe(gconcat('app.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(pth.build + '/js'))
+});
+
 gulp.task('styles',['sass'], function () {
-    return gulp.src(pth.src + '/css/*.css')
+    return gulp.src([pth.src + '/css/*.css',pth.src + '/tempcss/*.css'])
         .pipe(gconcat('main.css'))
         .pipe(cssmin())
         .pipe(gulp.dest(pth.build + '/css'));
+});
+
+gulp.task('stylemin', ['styles'], function () {
+    return del(pth.src + '/tempcss');
 });
 
 gulp.task('html', function () {
@@ -49,9 +63,10 @@ gulp.task('images', function () {
 });
 
 gulp.task('watch', ['browser-sync'], function () {
-    gulp.watch(pth.src + '/scss/*.scss', ['sass']);
+    gulp.watch(pth.src + '/scss/**/*', ['sass']);
     gulp.watch(pth.src + '/css/**/*', ['bsync:styles']);
     gulp.watch(pth.src + '/**/*.html', ['bsync:html']);
+    gulp.watch(pth.src + '/js/**/*', ['bsync:scripts']);
 });
 
 
@@ -63,12 +78,8 @@ gulp.task('bsync:html', ['html'], function () {
     browserSync.reload();
 });
 
-gulp.task('bsync:scripts', ['scripts'], function () {
-    browserSync.reload();
-});
-
 // Static server
-gulp.task('browser-sync', ['styles', 'fonts', 'html', 'images'], function () {
+gulp.task('browser-sync', ['rebuild'], function () {
     browserSync.init({
         server: {
             baseDir: "./build"
@@ -80,7 +91,9 @@ gulp.task('clean', function () {
     return del('build');
 });
 
-
-gulp.task('build', ['styles', 'fonts', 'html', 'images']);
+gulp.task('rebuild', ['clean'],function () {
+    return gulp.run('build');
+});
+gulp.task('build', ['stylemin', 'fonts', 'html', 'images', 'scripts']);
 
 gulp.task('serve', ['browser-sync', 'watch']);
